@@ -14,3 +14,13 @@ Node *create_node(unsigned int number, char priority) {
   return new_node;
 }
 
+LinkedList *init_list(void) {
+  LinkedList *list = (LinkedList *)malloc(sizeof(LinkedList));
+  if (list == NULL) {
+    fprintf(stderr, "Erro durante a alocação");
+    exit(EXIT_FAILURE);
+  }
+  list->head = NULL;
+  list->tail = NULL;
+  return list;
+}
