@@ -29,4 +29,6 @@ void insert(LinkedList *list, Node *node);
 // Função para atendimento
 void delete_at_head(LinkedList *list);
 
+void print_list(LinkedList *list);
+
 #endif
