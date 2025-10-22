@@ -7,5 +7,10 @@ typedef struct Node {
   struct Node *next;
 } Node;
 
+typedef struct LinkedList {
+  struct Node *head;
+  struct Node *tail;
+} LinkedList;
+
 
 #endif
