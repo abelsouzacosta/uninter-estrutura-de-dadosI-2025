@@ -26,5 +26,7 @@ void insert_at_tail(LinkedList *list, Node *node);
 // Será a inserção baseada em prioridade
 void insert(LinkedList *list, Node *node);
 
+// Função para atendimento
+void delete_at_head(LinkedList *list);
 
 #endif
