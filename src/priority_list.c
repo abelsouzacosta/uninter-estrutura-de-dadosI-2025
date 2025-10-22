@@ -4,8 +4,8 @@
 
 Node *create_node(unsigned int number, char priority) {
   Node *new_node = (Node *)malloc(sizeof(Node));
-  if (new_node != NULL) {
-    fprintf(stderr, "Erro durante a alocação");
+  if (new_node == NULL) {
+    fprintf(stderr, "Erro durante a alocação Nó");
     exit(EXIT_FAILURE);
   }
   new_node->number = number;
