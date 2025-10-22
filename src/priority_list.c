@@ -37,3 +37,15 @@ void insert_at_head(LinkedList *list, Node *node) {
   return;
 }
 
+void insert_at_tail(LinkedList *list, Node *node) {
+  if (list->head != NULL) {
+    Node *old_tail = list->tail;
+    old_tail->next = node;
+    list->tail = node;
+    return;
+  }
+  list->head = node;
+  list->tail = node;
+  return;
+}
+
