@@ -12,5 +12,9 @@ typedef struct LinkedList {
   struct Node *tail;
 } LinkedList;
 
+Node *create_node(unsigned int number, char priority);
+
+LinkedList *init_list(void);
+
 
 #endif
