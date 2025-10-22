@@ -49,3 +49,17 @@ void insert_at_tail(LinkedList *list, Node *node) {
   return;
 }
 
+void print_list(LinkedList *list) {
+  if (list->head == NULL) {
+    fprintf(stderr, "Lista vazia");
+    return;
+  }
+  Node *current = list->head;
+  while (current != NULL) {
+    if (current == list->tail) {
+      printf(" %c :: %d", current->priority, current->number);
+    } else
+      printf(" %c :: %d ->", current->priority, current->number);
+    current = current->next;
+  }
+}
