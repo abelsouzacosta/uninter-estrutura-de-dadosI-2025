@@ -24,3 +24,16 @@ LinkedList *init_list(void) {
   list->tail = NULL;
   return list;
 }
+
+void insert_at_head(LinkedList *list, Node *node) {
+  if (list->head != NULL) {
+    Node *old_head = list->head;
+    node->next = old_head;
+    list->head = node;
+    return;
+  }
+  list->head = node;
+  list->tail = node;
+  return;
+}
+
