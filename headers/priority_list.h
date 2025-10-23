@@ -1,5 +1,6 @@
 #ifndef PRIORITY_LIST
 #define PRIORITY_LIST
+#define PATTERN 'P'
 
 typedef struct Node {
   unsigned int number;

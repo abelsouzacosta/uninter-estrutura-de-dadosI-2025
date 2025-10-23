@@ -56,7 +56,7 @@ void insert_based_on_priority(LinkedList *list, Node *node) {
     return;
   }
   // qualquer outra prioridade é inserida no fim da lista
-  if (node->priority != 'P') {
+  if (node->priority != PATTERN) {
     insert_at_tail(list, node);
     return;
   }
@@ -64,7 +64,7 @@ void insert_based_on_priority(LinkedList *list, Node *node) {
   Node *current = list->head;
   // Variável para guardar o match
   Node *priority_match = NULL;
-  while (current != NULL && current->priority == 'P') {
+  while (current != NULL && current->priority == PATTERN) {
     priority_match = current;
     current = current->next;
   }
