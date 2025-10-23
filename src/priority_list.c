@@ -49,7 +49,38 @@ void insert_at_tail(LinkedList *list, Node *node) {
   return;
 }
 
-void insert_based_on_priority(LinkedList *list, Node *node) {}
+void insert_based_on_priority(LinkedList *list, Node *node) {
+  // lista vazia
+  if (list->head == NULL) {
+    insert_at_head(list, node);
+    return;
+  }
+  // qualquer outra prioridade é inserida no fim da lista
+  if (node->priority != 'P') {
+    insert_at_tail(list, node);
+    return;
+  }
+  // Nó para percorrer a lista
+  Node *current = list->head;
+  // Variável para guardar o match
+  Node *priority_match = NULL;
+  while (current != NULL && current->priority == 'P') {
+    priority_match = current;
+    current = current->next;
+  }
+  // a referencia não existe na lista
+  if (priority_match == NULL) {
+    insert_at_head(list, node);
+    return;
+  }
+  // a referência é o tail da lista
+  if (priority_match == list->tail) {
+    insert_at_tail(list, node);
+    return;
+  }
+  node->next = priority_match->next;
+  priority_match->next = node;
+}
 
 void print_list(LinkedList *list) {
   if (list->head == NULL) {
