@@ -49,6 +49,8 @@ void insert_at_tail(LinkedList *list, Node *node) {
   return;
 }
 
+void insert_based_on_priority(LinkedList *list, Node *node) {}
+
 void print_list(LinkedList *list) {
   if (list->head == NULL) {
     fprintf(stderr, "Lista vazia");
@@ -57,7 +59,7 @@ void print_list(LinkedList *list) {
   Node *current = list->head;
   while (current != NULL) {
     if (current == list->tail) {
-      printf(" %c :: %d", current->priority, current->number);
+      printf(" %c :: %d\n", current->priority, current->number);
     } else
       printf(" %c :: %d ->", current->priority, current->number);
     current = current->next;
