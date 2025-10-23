@@ -82,6 +82,16 @@ void insert_based_on_priority(LinkedList *list, Node *node) {
   priority_match->next = node;
 }
 
+void delete_at_head(LinkedList *list) {
+  if (list->head == NULL) {
+    fprintf(stderr, "Lista vazia");
+    return;
+  }
+  Node *old_head = list->head;
+  list->head = old_head->next;
+  free(old_head);
+}
+
 void print_list(LinkedList *list) {
   if (list->head == NULL) {
     fprintf(stderr, "Lista vazia");
